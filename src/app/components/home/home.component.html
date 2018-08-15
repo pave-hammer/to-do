@@ -1,0 +1,32 @@
+
+<div class="container color-dark">
+  <div class="col">
+    <p>Add an item to your to-do list.</p>   <!-- Replace with a list name -->
+  </div>
+  <div class="col">
+    <p>Your task list currently has ({{ itemCount }}) items.</p>
+  </div>
+</div>
+
+<div class="container color-light">
+  <div class="col">
+    <p class="sm">Use this form to add items to your to-do list.</p>
+        <div>
+            <input type="text" class="txt" name="item" [placeholder]="_data.placeHolder" [(ngModel)]="_data.taskItem">
+          </div>
+        <div class="width-100">
+            <div class="panel col-4">
+                <input type="button" class="btn" value="Add to List" (click)="addItem()" [disabled]="!formValid">
+              </div>
+              <div class="panel col-4">
+                  <input type="button" class="btn" value="Save List" (click)="saveToLocal()">
+              </div>
+              <div  class="panel col-4">
+                  <input type="button" class="btn" value="Load List" (click)="getFromLocal()">
+              </div>
+       </div>
+  </div>
+  <div class="col">
+    <p class="life-container" *ngFor="let task of tasks, let i = index" (click)="removeItem(i)"> {{ task }} </p>
+  </div>  
+</div>

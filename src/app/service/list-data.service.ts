@@ -1,28 +1,31 @@
 import { Injectable } from '@angular/core';
+import { ListDataApiService } from '../api/list-data-api.service';
 
 @Injectable()
 
 export class DataService {
 
-  constructor() { }
+  constructor(private _list: ListDataApiService) { }
 
   itemCount: number;
   taskItem: string;
-  tasks = [];
-  completedTasks = [];
+  placeHolder: string = 'Add an item'
 
   ngOnInit() { }
 
+
   addItem() {
-    this.tasks.push(this.taskItem);
+    console.log(this.taskItem);
+    this._list.tasks.push(this.taskItem);
     this.taskItem = '';
-    this.itemCount = this.tasks.length;
+    this.itemCount = this._list.tasks.length;
   }
 
   removeItem(i) {
-    this.completedTasks.push(this.taskItem);
-    this.tasks.splice(i, 1);
-    this.itemCount = this.tasks.length;
+    console.log(this.taskItem);
+    this._list.completedTasks.push(this.taskItem);
+    this._list.tasks.splice(i, 1);
+    this.itemCount = this._list.tasks.length;
   }
 
 }

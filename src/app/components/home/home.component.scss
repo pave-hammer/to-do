@@ -1,0 +1,60 @@
+
+.container {
+    display: grid;
+    grid-template-columns: 50% auto;
+    margin-left: 3.35%;
+}
+
+.width-100 { 
+    width: 80%;
+}
+
+.col {
+    padding: .4em 1.3em;
+}
+
+.panel { 
+    display: inline-block;
+}
+
+.panel.col-4 {
+    width: 33%;
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+
+.col-4:first-child{
+    padding-left: 0;
+}
+
+.color-dark {
+    background: #2885C4
+}
+
+.color-light {
+    background: #57B3F1
+}
+
+input.txt {
+    border: 0;
+    padding: 1em;
+    margin-bottom: 2em;
+    width: 76%;
+}
+
+input.btn {
+    border: 0;
+    padding: 1em 3em;
+    background: #a5f883;
+    color: #003A61;
+    margin-bottom: 1em;
+    cursor: pointer;
+    width: 100%;
+}
+
+.life-container {
+    background: #3FA0E1;
+    padding: .5em;
+    font-weight: bold;
+    cursor: pointer;
+}

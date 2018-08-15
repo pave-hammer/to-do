@@ -5,19 +5,22 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { CompletedComponent } from './completed/completed.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { CompletedComponent } from './components/completed/completed.component';
+import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
 
 import { DataService } from './service/list-data.service';
 import { ListDataApiService } from './api/list-data-api.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    CompletedComponent
+    CompletedComponent,
+    SidenavbarComponent
   ],
   imports: [
     BrowserModule,

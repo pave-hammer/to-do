@@ -2,16 +2,23 @@
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
 
+#sidebar {
+    position: absolute;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+.nav-container {
+    margin-left: 4%;
+}
 body {
     background:#2E9CE6;
-    padding: 3em;
     font-family: 'Raleway', 'Arial';
     color:#fff;
+    margin: 0;
 }
 ul {
     list-style-type:none;
-    margin:0 0 2em 0;
-    padding:0;
 }
 ul li {
     display:inline;
