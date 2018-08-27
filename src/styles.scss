@@ -1,33 +1,76 @@
-/* You can add global styles to this file, and also import other style files */
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
 
-#sidebar {
-    position: absolute;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: 0;
-}
-.nav-container {
-    margin-left: 4%;
-}
 body {
-    background:#2E9CE6;
+    background:rgb(87, 87, 87);
     font-family: 'Raleway', 'Arial';
     color:#fff;
     margin: 0;
 }
+
 ul {
     list-style-type:none;
 }
+
 ul li {
     display:inline;
     margin-right: 30px;
 }
+
 ul li a {
     font-size: 1.5em;
 }
+
 a {
     color:#fff;
     text-decoration:none;
+}
+
+app-root {
+position: absolute;
+top: 0px;
+left: 0px;
+bottom: 0px;
+right: 0px;
+}
+
+
+
+
+// ********************************************** DOCK - Horizontal & Vertical & it's children
+.dock-vertical,
+.dock-horizontal {
+    height: 100%;
+    width: 100%;
+}
+
+.dock-vertical {
+    display: flex;
+    flex-flow: column;
+
+    > .dock-top,
+    > .dock-bottom {
+        flex: 0 0 auto;
+        overflow-y: hidden;
+    }
+
+    > .dock-content {
+        position: relative; // for panel functionality which can be injected
+        flex: 0 1 100%;
+    }
+}
+
+.dock-horizontal {
+    display: flex;
+    flex-flow: row;
+
+    > .dock-left,
+    > .dock-right {
+        flex: 0 0 auto;
+    }
+
+    > .dock-content {
+        position: relative; // for panel functionality which can be injected
+        flex: 0 1 100%;
+    }
 }

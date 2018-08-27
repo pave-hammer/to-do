@@ -1,16 +1,16 @@
 
-<div class="nav-container">
-  <ul>
-    <li><a routerLink="">Home</a></li>
-    <li><a routerLink="about">About</a></li>
-    <li><a routerLink="completedtasks">Completed Tasks</a></li>
-  </ul>
-</div>
-
-<div id="container">
-  <app-sidenavbar></app-sidenavbar>
-
-  <div id="content">
-    <router-outlet></router-outlet>
+<div class="dock-vertical">
+  <div class="nav-container dock-top">
+    <ul>
+      <li><a routerLink="">Home</a></li>
+      <li><a routerLink="about">About</a></li>
+    </ul>
+  </div>
+  
+  <div id="container" class="dock-content dock-horizontal">
+    <app-sidenavbar class="dock-left"></app-sidenavbar>  
+    <div id="content" class="dock-content">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>

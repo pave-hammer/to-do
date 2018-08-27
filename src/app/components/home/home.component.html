@@ -1,32 +1,38 @@
 
 <div class="container color-dark">
   <div class="col">
-    <p>Add an item to your to-do list.</p>   <!-- Replace with a list name -->
+    <p>Use this form to add an item to your to-do list.</p>   <!-- Replace with a list name -->
   </div>
   <div class="col">
     <p>Your task list currently has ({{ itemCount }}) items.</p>
   </div>
 </div>
-
 <div class="container color-light">
   <div class="col">
-    <p class="sm">Use this form to add items to your to-do list.</p>
-        <div>
-            <input type="text" class="txt" name="item" [placeholder]="_data.placeHolder" [(ngModel)]="_data.taskItem">
-          </div>
-        <div class="width-100">
-            <div class="panel col-4">
-                <input type="button" class="btn" value="Add to List" (click)="addItem()" [disabled]="!formValid">
-              </div>
-              <div class="panel col-4">
-                  <input type="button" class="btn" value="Save List" (click)="saveToLocal()">
-              </div>
-              <div  class="panel col-4">
-                  <input type="button" class="btn" value="Load List" (click)="getFromLocal()">
-              </div>
-       </div>
+    <div>
+      <form><br>
+        <input type="text" class="txt" name="item" [placeholder]="_data.placeHolder" [(ngModel)]="_data.taskItem"
+          (keydown.enter)="addItem()">
+        <button class="add-btn" name="add-btn" (click)="addItem()" title="Add an Item"><i class="fa fa-plus fa-2x">
+          </i></button>
+      </form>
+    </div>
   </div>
-  <div class="col">
-    <p class="life-container" *ngFor="let task of tasks, let i = index" (click)="removeItem(i)"> {{ task }} </p>
-  </div>  
+  <div class="col-2">
+    <form>  
+      <div class="life-container" *ngFor="let task of taskList">
+        <div style="display: inline-block; width: 50%"> 
+          <span *ngIf="!task.edit">
+            {{ task.title }}
+          </span>
+          <input *ngIf="task.edit" style="width: 100%;" name="viewMode" [(ngModel)]="task.title">
+        </div>
+        <div style="display: inline-block; width: 50%; text-align: right">
+          <button class="btn" (click)="editTask(task)" title="Edit"><i class="fa fa-pencil-square-o fa-lg"></i></button>
+          <button class="btn" (click)="updateTask(task)" title="Update"><i class="fa fa-upload fa-lg"></i></button>
+          <button class="btn" (click)="removeItem(task.id)" title="Delete"><i class="fa fa-trash fa-lg"></i></button>
+        </div>
+      </div>
+    </form>  
+  </div>
 </div>
